@@ -1,11 +1,30 @@
 :host {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 20px;
 }
 
 h1 {
     color: #123456;
     font-family: Arial, sans-serif;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #234567;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 8px;
+}
+
+.recipe-count {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #345678;
+    font-family: 'Courier New', Courier, monospace;
 }
