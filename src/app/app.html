@@ -2,7 +2,13 @@
 <h2>{{`${activeRecipe().name}: ${activeRecipe().description}`}}</h2>
 <p class="recipe-count">Recipes: {{recipeCount()}}</p>
 
-<div class="buttons">
-  <button class="button add-recipe" (click)="changeActiveRecipe(0)">{{recipeName1}}</button>
-  <button class="button recipe-list" (click)="changeActiveRecipe(1)">{{recipeName2}}</button>
+<div class="recipe-buttons">
+  <button class="recipe-button add-recipe" (click)="changeActiveRecipe(0)">{{recipeName1}}</button>
+  <button class="recipe-button recipe-list" (click)="changeActiveRecipe(1)">{{recipeName2}}</button>
+</div>
+
+<p class="servings">Servings: {{servingsCount()}}</p>
+<div class="servings-buttons">
+  <button class="servings-button increment" (click)="increment()">+1</button>
+  <button class="servings-button decrement" (click)="decrement()">-1</button>
 </div>
