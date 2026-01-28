@@ -1,8 +1,8 @@
 <h1>{{title()}}</h1>
-<h2>{{tagline()}}</h2>
+<h2>{{`${activeRecipe().name}: ${activeRecipe().description}`}}</h2>
 <p class="recipe-count">Recipes: {{recipeCount()}}</p>
 
 <div class="buttons">
-  <button class="button add-recipe" (click)="log(messages.add)">Add Recipe</button>
-  <button class="button recipe-list" (click)="log(messages.list)">Recipe List</button>
+  <button class="button add-recipe" (click)="changeActiveRecipe(0)">{{recipeName1}}</button>
+  <button class="button recipe-list" (click)="changeActiveRecipe(1)">{{recipeName2}}</button>
 </div>
