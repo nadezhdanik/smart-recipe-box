@@ -12,3 +12,21 @@
   <button class="servings-button increment" (click)="increment()">+1</button>
   <button class="servings-button decrement" (click)="decrement()">-1</button>
 </div>
+
+<h3>INGREDIENTS</h3>
+<table>
+  <thead>
+    <th>№</th>
+    <th>Name</th>
+    <th>Quantity</th>
+  </thead>
+  <tbody>
+    @for(ingredient of adjustedRecipe().ingredients; track $index) {
+    <tr>
+      <td>{{$index + 1}}</td>
+      <td>{{ingredient.name}}</td>
+      <td>{{ingredient.quantity + ' ' + ingredient.unit}}</td>
+    </tr>
+    }
+  </tbody>
+</table>

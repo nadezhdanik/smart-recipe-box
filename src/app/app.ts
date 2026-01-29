@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { MOCK_RECIPES } from './mock-recipes';
 import { RecipeModel } from './models';
 
@@ -15,6 +15,16 @@ export class App {
   protected recipeName1 = MOCK_RECIPES[0].name;
   protected recipeName2 = MOCK_RECIPES[1].name;
   protected readonly servingsCount = signal(1);
+
+  protected readonly adjustedRecipe = computed(() => {
+    return {
+      ...this.activeRecipe(),
+      ingredients: this.activeRecipe().ingredients.map((ingredient) => ({
+        ...ingredient,
+        quantity: ingredient.quantity * this.servingsCount(),
+      })),
+    };
+  });
 
   protected changeActiveRecipe(index: number): void {
     this.activeRecipe.set(MOCK_RECIPES[index]);
